@@ -1,0 +1,186 @@
+@use "sass:math";
+@import "bootstrap/scss/bootstrap";
+
+body{
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+@function fluid($min, $max, $from: 420, $to: 1470) {
+  $slope: math.div($max - $min, $to - $from);
+  $base: $min - $slope * $from;
+  @return clamp(#{$min}px, #{$base}px + #{$slope * 100}vw, #{$max}px);
+}
+
+$primary-black: #000000;
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+
+$container-max: 1470px;
+$container-md: 1230px;
+$design-viewport: 1920px;
+
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 20px;
+  max-width: max(#{$container-max}, #{math.div($container-max, $design-viewport) * 100vw});
+}
+
+.container-md {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 20px;
+  max-width: max(#{$container-md}, #{math.div($container-md, $design-viewport) * 100vw});
+}
+
+.spacer {
+  width: 100%;
+  height: fluid(32, 64);
+}
+
+.gap-12 {
+    gap: fluid(6, 12);
+}
+
+.teaser-mobile {
+  display: none;
+}
+
+.teaser {
+  display: block;
+}
+
+.col-gr {
+  display: grid;
+  grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr);
+  gap: fluid(6, 12);
+
+  &.inverse {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr);
+  }
+}
+
+.row-gr {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  gap: fluid(6, 12);
+  height: 100%;
+}
+
+.r-12 {
+  border-radius: fluid(8, 12);
+}
+
+.h1 {
+  font-size: fluid(32, 72);
+  font-weight: 600;
+  line-height: 120%;
+}
+
+p {
+    font-size: fluid(14, 16);
+}
+
+.navbar-inner {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: fluid(60, 80);
+
+  .logo {
+    height: fluid(12, 14);
+    width: auto;
+  }
+}
+
+.button-outline {
+  font-size: fluid(14, 16);
+  font-weight: 500;
+  padding-block: fluid(12, 16);
+  padding-inline: fluid(18, 24);
+  border-radius: 64px;
+  line-height: 100%;
+  border: 1px solid $primary-black;
+  width: fit-content;
+}
+
+.title-text-inner {
+  .title {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+    gap: fluid(8, 12);
+  }
+
+  .text {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+    gap: fluid(8, 12);
+
+    .perex {
+        grid-column: 2;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .title-text-inner {
+    .title {
+        margin-bottom: fluid(24, 32);
+    }
+
+    .text {
+        grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+
+        .perex {
+            grid-column: 2;
+        }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .col-gr {
+    grid-template-columns: 1fr;
+
+    &.inverse {
+      grid-template-columns: 1fr;
+  }
+  }
+
+  .teaser-mobile {
+    display: block;
+  }
+
+  .teaser {
+    display: none;
+  }
+
+  .title-text-inner {
+    .title {
+        margin-bottom: fluid(24, 32);
+        grid-template-columns: minmax(0, 8fr) minmax(0, 2fr);
+    }
+
+    .text {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 8fr);
+
+        .perex {
+            grid-column: 2;
+        }
+    }
+    }
+
+    .layout-2 {
+        .layout-2-inner {
+            flex-direction: column;
+        }
+    }
+}
