@@ -15,9 +15,11 @@
     <div class="container">
       <div class="navbar-inner">
         <img class="logo" src="img/logo.svg"/>
-        <div class="navbar-links">
+        <div class="navbar-links d-flex justify-content-center gap-16">
           <div class="button-outline">Kontakt</div>
-          <div class="offcanvas-link"></div>
+          <div class="d-flex">
+            <img src="img/hamburger.svg" class="icon"/>
+          </div>
         </div>
       </div>
     </div>
@@ -25,15 +27,15 @@
   <div class="teaser">
     <div class="container">
       <div class="teaser-inner col-gr">
-        <div>
-          <img class="img-fluid h-100 w-100 object-fit-cover r-12" src="img/teaser-one.jpg"/>
+        <div class="reveal">
+          <img class="h-100 w-100 r-12" src="img/teaser-one.jpg"/>
         </div>
-        <div class="row-gr">
-          <div>
-            <img class="img-fluid h-100 w-100 object-fit-cover r-12" src="img/teaser-two.jpg"/>
+        <div class="d-flex flex-column gap-12">
+          <div class="reveal" data-delay="0.2">
+            <img class="h-100 w-100 r-12" src="img/teaser-two.jpg"/>
           </div>
-          <div>
-            <img class="img-fluid h-100 w-100 object-fit-cover r-12" src="img/teaser-three.jpg"/>
+          <div class="reveal" data-delay="0.4">
+            <img class="h-100 w-100 r-12" src="img/teaser-three.jpg"/>
           </div>
         </div>
       </div>
@@ -41,21 +43,21 @@
   </div>
   <div class="teaser-mobile">
     <div class="container">
-      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselExampleCaptions" class="carousel slide reveal" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner d-flex gap-12">
-          <div class="carousel-item active">
-            <img src="img/teaser-one.jpg" class="d-block w-100 r-12" alt="...">
+          <div class="carousel-item active ratio ratio-1x1">
+            <img src="img/teaser-one.jpg" class="d-block w-100 r-12 object-fit-cover" alt="...">
           </div>
-          <div class="carousel-item">
-            <img src="img/teaser-two.jpg" class="d-block w-100 r-12" alt="...">
+          <div class="carousel-item ratio ratio-1x1">
+            <img src="img/teaser-two.jpg" class="d-block w-100 r-12 object-fit-cover" alt="...">
           </div>
-          <div class="carousel-item">
-            <img src="img/teaser-three.jpg" class="d-block w-100 r-12" alt="...">
+          <div class="carousel-item ratio ratio-1x1">
+            <img src="img/teaser-three.jpg" class="d-block w-100 r-12 object-fit-cover" alt="...">
           </div>
         </div>
       </div>
@@ -66,10 +68,10 @@
   <div class="title-text">
     <div class="container-md">
       <div class="title-text-inner">
-        <div class="title">
+        <div class="title reveal">
           <h1 class="h1">Lorem ipsum lorem ipsum lorem ipsum</h1>
         </div>
-        <div class="text">
+        <div class="text reveal">
           <p class="perex">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mattis sem vel posuere cursus. Etiam feugiat consectetur porta. Vestibulum nulla lacus, rhoncus consectetur faucibus in, vestibulum at arcu. Cras ac lacus ante. Aenean quis finibus mi. Morbi tempor magna eu vulputate ultricies. Mauris egestas nisi sit amet neque porttitor, id dapibus elit luctus. </p>
         </div>
       </div>
@@ -80,10 +82,10 @@
   <div class="layout-2">
     <div class="container">
       <div class="layout-2-inner d-flex gap-12">
-        <div>
+        <div class="reveal">
           <img class="img-fluid h-100 w-100 object-fit-cover r-12" src="img/l-2.jpg"/>
         </div>
-        <div>
+        <div class="reveal" data-delay="0.2">
           <img class="img-fluid h-100 w-100 object-fit-cover r-12" src="img/l-2.jpg"/>
         </div>
       </div>
@@ -102,7 +104,7 @@
   <div class="spacer"></div>
   <div class="layout-3">
     <div class="container">
-      <div class="layout-3-inner">
+      <div class="layout-3-inner d-flex flex-column gap-12">
         <div>
           <img class="w-100 r-12" src="img/l-3-one.jpg"/>
         </div>
@@ -144,5 +146,43 @@
   <div class="spacer"></div>
   <div class="spacer"></div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // plynulý scroll propojený s GSAP
+    const lenis = new Lenis();
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    // odkrytí obrázků
+    document.querySelectorAll('.reveal').forEach((box) => {
+    const delay = parseFloat(box.dataset.delay) || 0;
+
+    gsap.fromTo(box,
+      { y: 80, opacity: 0, filter: 'blur(12px)' },
+      {
+        y: 0,
+        opacity: 1,
+        filter: 'blur(0px)',
+        duration: 1.2,
+        ease: 'power3.out',
+        delay: delay,
+        scrollTrigger: { trigger: box, start: 'top 85%' }
+      });
+    });
+
+    // jemný parallax
+    document.querySelectorAll('.parallax img').forEach((img) => {
+      gsap.fromTo(img, { yPercent: -8 }, {
+        yPercent: 8,
+        ease: 'none',
+        scrollTrigger: { trigger: img, start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    });
+  </script>
 </body>
 </html>

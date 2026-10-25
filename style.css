@@ -11869,6 +11869,16 @@ body {
   font-style: normal;
 }
 
+.reveal,
+.parallax {
+  overflow: hidden;
+  border-radius: clamp(8px, 6.4px + 0.380952381vw, 12px);
+}
+
+.parallax img {
+  height: 116%;
+}
+
 .container {
   width: 100%;
   margin-inline: auto;
@@ -11892,6 +11902,10 @@ body {
   gap: clamp(6px, 3.6px + 0.5714285714vw, 12px);
 }
 
+.gap-16 {
+  gap: clamp(8px, 4.8px + 0.7619047619vw, 16px);
+}
+
 .teaser-mobile {
   display: none;
 }
@@ -11911,7 +11925,7 @@ body {
 
 .row-gr {
   display: grid;
-  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1.618fr) minmax(0, 1fr);
   gap: clamp(6px, 3.6px + 0.5714285714vw, 12px);
   height: 100%;
 }
@@ -11922,7 +11936,7 @@ body {
 
 .h1 {
   font-size: clamp(32px, 16px + 3.8095238095vw, 72px);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 120%;
 }
 
@@ -11940,6 +11954,9 @@ p {
 .navbar-inner .logo {
   height: clamp(12px, 11.2px + 0.1904761905vw, 14px);
   width: auto;
+}
+.navbar-inner .icon {
+  width: clamp(24px, 20.8px + 0.7619047619vw, 32px);
 }
 
 .button-outline {

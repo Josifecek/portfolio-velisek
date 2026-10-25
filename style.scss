@@ -17,6 +17,16 @@ body{
   @return clamp(#{$min}px, #{$base}px + #{$slope * 100}vw, #{$max}px);
 }
 
+.reveal,
+.parallax {
+  overflow: hidden;
+  border-radius: fluid(8, 12);
+}
+
+.parallax img {
+  height: 116%; 
+}
+
 $primary-black: #000000;
 
 $breakpoint-mobile: 480px;
@@ -47,6 +57,10 @@ $design-viewport: 1920px;
 
 .gap-12 {
     gap: fluid(6, 12);
+}
+
+.gap-16 {
+    gap: fluid(8, 16);
 }
 
 .teaser-mobile {
@@ -80,7 +94,7 @@ $design-viewport: 1920px;
 
 .h1 {
   font-size: fluid(32, 72);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 120%;
 }
 
@@ -98,6 +112,10 @@ p {
   .logo {
     height: fluid(12, 14);
     width: auto;
+  }
+
+  .icon {
+    width: fluid(24, 32);
   }
 }
 
