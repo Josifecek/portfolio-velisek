@@ -12088,6 +12088,13 @@ p {
   .layout-2 .layout-2-inner {
     flex-direction: column;
   }
+  .footer .footer-inner {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .footer .footer-inner .footer-tags {
+    align-items: start;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
