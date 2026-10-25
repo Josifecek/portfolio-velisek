@@ -7,6 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -27,14 +28,14 @@
   <div class="teaser">
     <div class="container">
       <div class="teaser-inner col-gr">
-        <div class="reveal">
+        <div class="reveal" data-cursor-text="Více" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <img class="h-100 w-100 r-12" src="img/teaser-one.jpg"/>
         </div>
         <div class="d-flex flex-column gap-12">
-          <div class="reveal" data-delay="0.2">
+          <div class="reveal" data-delay="0.2" data-cursor-text="Více">
             <img class="h-100 w-100 r-12" src="img/teaser-two.jpg"/>
           </div>
-          <div class="reveal" data-delay="0.4">
+          <div class="reveal" data-delay="0.4" data-cursor-text="Více">
             <img class="h-100 w-100 r-12" src="img/teaser-three.jpg"/>
           </div>
         </div>
@@ -50,13 +51,13 @@
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner d-flex gap-12">
-          <div class="carousel-item active ratio ratio-1x1">
+          <div class="carousel-item active ratio ratio-1x1" data-cursor-text="Více">
             <img src="img/teaser-one.jpg" class="d-block w-100 r-12 object-fit-cover" alt="...">
           </div>
-          <div class="carousel-item ratio ratio-1x1">
+          <div class="carousel-item ratio ratio-1x1" data-cursor-text="Více">
             <img src="img/teaser-two.jpg" class="d-block w-100 r-12 object-fit-cover" alt="...">
           </div>
-          <div class="carousel-item ratio ratio-1x1">
+          <div class="carousel-item ratio ratio-1x1" data-cursor-text="Více">
             <img src="img/teaser-three.jpg" class="d-block w-100 r-12 object-fit-cover" alt="...">
           </div>
         </div>
@@ -69,10 +70,10 @@
     <div class="container-md">
       <div class="title-text-inner">
         <div class="title reveal">
-          <h1 class="h1">Lorem ipsum lorem ipsum lorem ipsum</h1>
+          <h1 class="h1">Navrhuji weby a vizuální identity, které mají smysl.</h1>
         </div>
         <div class="text reveal">
-          <p class="perex">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mattis sem vel posuere cursus. Etiam feugiat consectetur porta. Vestibulum nulla lacus, rhoncus consectetur faucibus in, vestibulum at arcu. Cras ac lacus ante. Aenean quis finibus mi. Morbi tempor magna eu vulputate ultricies. Mauris egestas nisi sit amet neque porttitor, id dapibus elit luctus. </p>
+          <p class="perex">Jmenuji se Josef Velíšek a věnuji se designu a tvorbě webů. Zajímá mě, jak se dobrý nápad promění v čistý a funkční výsledek, od prvního konceptu po poslední pixel. Spolupracuji s firmami i jednotlivci, kteří chtějí vypadat dobře a zároveň srozumitelně. Tady najdete výběr projektů, na kterých jsem pracoval. </p>
         </div>
       </div>
     </div>
@@ -82,10 +83,10 @@
   <div class="layout-2">
     <div class="container">
       <div class="layout-2-inner d-flex gap-12">
-        <div class="reveal">
+        <div class="reveal" data-cursor-text="Více">
           <img class="img-fluid h-100 w-100 object-fit-cover r-12" src="img/l-2.jpg"/>
         </div>
-        <div class="reveal" data-delay="0.2">
+        <div class="reveal" data-delay="0.2" data-cursor-text="Více">
           <img class="img-fluid h-100 w-100 object-fit-cover r-12" src="img/l-2.jpg"/>
         </div>
       </div>
@@ -95,7 +96,7 @@
   <div class="layout-1">
     <div class="container">
       <div class="layout-1-inner">
-        <div class="reveal">
+        <div class="reveal" data-cursor-text="Více">
           <img class="img-fluid h-100 w-100 object-fit-cover r-12" src="img/l-3-one.jpg"/>
         </div>
       </div>
@@ -105,14 +106,14 @@
   <div class="layout-3">
     <div class="container">
       <div class="layout-3-inner d-flex flex-column gap-12">
-        <div class="reveal">
+        <div class="reveal" data-cursor-text="Více">
           <img class="w-100 r-12" src="img/l-3-one.jpg"/>
         </div>
         <div class="col-gr inverse align-items-start">
-          <div class="ratio ratio-1x1 reveal">
+          <div class="ratio ratio-1x1 reveal" data-cursor-text="Více">
             <img class="img-fluid h-100 w-100 object-fit-cover r-12" src="img/l-3-thre.jpg"/>
           </div>
-          <div class="ratio ratio-1x1 reveal" data-delay="0.2">
+          <div class="ratio ratio-1x1 reveal" data-delay="0.2" data-cursor-text="Více">
             <img class="img-fluid h-100 w-100 object-fit-cover r-12" src="img/l-3-two.jpg"/>
           </div>
         </div>
@@ -125,64 +126,59 @@
     <div class="container">
       <div class="layout-4-inner d-flex flex-column gap-12">
         <div class="col-gr">
-          <div class="reveal">
+          <div class="reveal" data-cursor-text="Více">
             <img class="img-fluid h-100 w-100 object-fit-cover r-12" src="img/l-4-one.jpg"/>
           </div>
-          <div class="reveal" data-delay="0.2">
+          <div class="reveal" data-delay="0.2" data-cursor-text="Více">
             <img class="img-fluid h-100 w-100 object-fit-cover r-12" src="img/l-4-two.jpg"/>
           </div>
         </div>
         <div class="col-gr inverse">
-          <div class="reveal">
+          <div class="reveal" data-cursor-text="Více">
             <img class="img-fluid h-100 w-100 object-fit-cover r-12" src="img/l-4-two.jpg"/>
           </div>
-          <div class="reveal" data-delay="0.2">
+          <div class="reveal" data-delay="0.2" data-cursor-text="Více">
             <img class="img-fluid h-100 w-100 object-fit-cover r-12" src="img/l-4-one.jpg"/>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="spacer"></div>
-  <div class="spacer"></div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <img class="logo" src="img/logo-white.svg"/>
+        <div class="footer-tags d-flex justify-content-center gap-16">
+          <div class="tag">velisekjosef@gmail.com</div>
+          <div class="tag">+420 777 874 262</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    // plynulý scroll propojený s GSAP
-    const lenis = new Lenis();
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add((time) => lenis.raf(time * 1000));
-    gsap.ticker.lagSmoothing(0);
-
-    // odkrytí obrázků
-    document.querySelectorAll('.reveal').forEach((box) => {
-    const delay = parseFloat(box.dataset.delay) || 0;
-
-    gsap.fromTo(box,
-      { y: 80, opacity: 0, filter: 'blur(12px)' },
-      {
-        y: 0,
-        opacity: 1,
-        filter: 'blur(0px)',
-        duration: 1.2,
-        ease: 'power3.out',
-        delay: delay,
-        scrollTrigger: { trigger: box, start: 'top 85%' }
-      });
-    });
-
-    // jemný parallax
-    document.querySelectorAll('.parallax img').forEach((img) => {
-      gsap.fromTo(img, { yPercent: -8 }, {
-        yPercent: 8,
-        ease: 'none',
-        scrollTrigger: { trigger: img, start: 'top bottom', end: 'bottom top', scrub: true }
-      });
-    });
-  </script>
+  <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
