@@ -6,6 +6,11 @@ gsap.registerPlugin(ScrollTrigger);
     gsap.ticker.add((time) => lenis.raf(time * 1000));
     gsap.ticker.lagSmoothing(0);
 
+    document.querySelectorAll('.modal').forEach((modal) => {
+      modal.addEventListener('show.bs.modal', () => lenis.stop());
+      modal.addEventListener('hidden.bs.modal', () => lenis.start());
+    });
+
     ScrollTrigger.create({
     trigger: 'footer',
     start: 'top 90%',              

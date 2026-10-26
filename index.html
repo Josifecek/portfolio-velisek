@@ -17,14 +17,28 @@
       <div class="navbar-inner">
         <img class="logo" src="img/logo.svg"/>
         <div class="navbar-links d-flex justify-content-center gap-16">
-          <div class="button-outline">Kontakt</div>
-          <div class="d-flex">
+          <button class="button-outline">Kontakt</button>
+          <div class="d-flex cursor-pointer" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
             <img src="img/hamburger.svg" class="icon"/>
           </div>
         </div>
       </div>
     </div>
   </nav>
+
+  <div class="offcanvas offcanvas-end offcanvas-upgrade" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <a>Weby</a>
+      <a>Příspěvky</a>
+      <a>Loga</a>
+      <a>Plakáty</a>
+      <a>Motion design</a>
+    </div>
+  </div>
+
   <div class="teaser">
     <div class="container">
       <div class="teaser-inner col-gr">
@@ -156,15 +170,26 @@
     </div>
   </footer>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <div class="modal fade" id="exampleModal" tabindex="-1" data-lenis-prevent aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-upgrade">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+          <img src="img/image.jpg" class="w-100 r-12"/>
+          <div class="info">
+            <div class="">
+              <h1>Název reference</h1>
+              <div class="tags">
+                <div class="tag">Tag example</div>
+                <div class="tag">Tag example</div>
+                <div class="tag">Tag example</div>
+                <div class="tag">Tag example</div>
+              </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper ut ligula a tempus. Sed eleifend sodales turpis vel semper. Suspendisse ac turpis sed magna malesuada placerat eu eget erat. Nulla turpis quam, tempor nec efficitur ut, varius sed nibh. Donec non sollicitudin quam. Duis vel feugiat ex. Maecenas quis rhoncus augue. Fusce sit amet leo ante. Nunc vulputate magna risus, sed tincidunt est tincidunt et. Vivamus accumsan, nisi vel tristique feugiat, nunc purus semper nibh, id pharetra orci ligula nec orci. Sed arcu quam, bibendum ac consectetur id, accumsan et urna. Aenean in iaculis nisi.</p>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
